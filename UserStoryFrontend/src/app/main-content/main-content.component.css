@@ -1,0 +1,13 @@
+.contain{
+    width:max-content;
+}
+.card-containers{
+    background-color: darkgrey;
+    float: left;
+    padding: 10px;
+    width: max-content;
+    display:flex;
+    justify-content: space-between;
+    margin:10px;
+    min-width:250px;
+}

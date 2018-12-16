@@ -1,0 +1,27 @@
+<div class="contain">
+  <div class="card-containers">
+    <th>In Queue</th>
+    <mat-list>
+      <mat-list-item *ng-for="let #temp in demos">
+        <mat-card>
+          <mat-card-title>{{temp.description}}</mat-card-title>
+          <mat-card-content>{{temp.date}}</mat-card-content>
+        </mat-card>
+
+      </mat-list-item>
+    </mat-list>
+
+  </div>
+  <div class="card-containers">
+    <th>In Progress</th>
+  </div>
+  <div class="card-containers">
+    <th>Deployed on Dev</th>
+  </div>
+  <div class="card-containers">
+    <th>Qa in Progress</th>
+  </div>
+  <div class="card-containers">
+    <th>Waiting Deployment</th>
+  </div>
+</div>
