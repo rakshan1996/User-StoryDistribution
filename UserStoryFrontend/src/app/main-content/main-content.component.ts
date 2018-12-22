@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface trying {
+export interface Tasks {
   description: string;
-  date: string;
+  updated: Date;
 }
 
 @Component({
@@ -11,14 +11,18 @@ export interface trying {
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-  demos: trying[] = [
+  Todos: Tasks[] = [
     {
-      description : 'mzaaaajayega',
-      date : '12/12/12 '
+      description: 'Photos',
+      updated: new Date('1/1/16'),
     },
     {
-      description : 'mzaaaajayega',
-      date : '12/12/12 '
+      description: 'Recipes',
+      updated: new Date('1/17/16'),
+    },
+    {
+      description: 'Work',
+      updated: new Date('1/28/16'),
     }
   ];
 

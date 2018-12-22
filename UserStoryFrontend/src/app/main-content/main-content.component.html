@@ -1,17 +1,13 @@
 <div class="contain">
   <div class="card-containers">
-    <th>In Queue</th>
     <mat-list>
-      <mat-list-item *ng-for="let #temp in demos">
-        <mat-card>
-          <mat-card-title>{{temp.description}}</mat-card-title>
-          <mat-card-content>{{temp.date}}</mat-card-content>
-        </mat-card>
-
+      <h3 mat-subheader>Folders</h3>
+      <mat-list-item *ngFor="let task of Todos">
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <h4 mat-line>{{task.description}}</h4>
+        <p mat-line> {{task.updated | date}} </p>
       </mat-list-item>
     </mat-list>
-
-  </div>
   <div class="card-containers">
     <th>In Progress</th>
   </div>
