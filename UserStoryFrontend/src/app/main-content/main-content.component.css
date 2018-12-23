@@ -1,8 +1,6 @@
-.contain{
-    width:max-content;
-}
+
 .card-containers{
-    background-color: darkgrey;
+    
     float: left;
     padding: 10px;
     width: max-content;

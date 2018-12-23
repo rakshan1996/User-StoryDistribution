@@ -2,7 +2,19 @@
 .container{
     height: 82vh;
 }
+.content {
+    width:100%;
+}
+
+.contain{
+    width:100%;
+}
+
 
 .sideNav{
     width:180px;
+}
+
+.body{
+    background-color: rgba(241, 241, 235, 0.733);
 }

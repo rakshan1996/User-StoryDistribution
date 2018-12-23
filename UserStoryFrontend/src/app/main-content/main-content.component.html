@@ -1,23 +1,33 @@
-<div class="contain">
-  <div class="card-containers">
-    <mat-list>
-      <h3 mat-subheader>Folders</h3>
-      <mat-list-item *ngFor="let task of Todos">
-        <mat-icon mat-list-icon>folder</mat-icon>
-        <h4 mat-line>{{task.description}}</h4>
-        <p mat-line> {{task.updated | date}} </p>
-      </mat-list-item>
-    </mat-list>
-  <div class="card-containers">
-    <th>In Progress</th>
-  </div>
-  <div class="card-containers">
-    <th>Deployed on Dev</th>
-  </div>
-  <div class="card-containers">
-    <th>Qa in Progress</th>
-  </div>
-  <div class="card-containers">
-    <th>Waiting Deployment</th>
-  </div>
+<div class="contain" style="width: 100%;">
+  <div class="card-containers" >
+      <mat-list>
+        <h3 mat-subheader>Enque</h3>
+        <mat-list-item *ngFor="let task of Todos">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <h4 mat-line>{{task.description}}</h4>
+          <p mat-line> {{task.updated | date}} </p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="card-containers">
+      <mat-list>
+        <h3 mat-subheader>In Progress</h3>
+      </mat-list>
+    </div>
+    <div class="card-containers">
+      <mat-list>
+        <h3 mat-subheader>Deployed on Dev</h3>
+      </mat-list>
+    </div>
+    <div class="card-containers">
+      <mat-list>
+        <h3 mat-subheader>QA In Progress</h3>
+      </mat-list>
+    </div>
+    <div class="card-containers">
+      <mat-list>
+        <h3 mat-subheader>Waiting Deployment</h3>
+      </mat-list>
+    </div>
 </div>
+
