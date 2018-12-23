@@ -7,5 +7,14 @@
     display:flex;
     justify-content: space-between;
     margin:10px;
-    min-width:250px;
+    max-width:350px;
+    min-width: 250px;
+    min-height:82vh;
+}
+
+.taskLists{
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 10%;
+    max-height:20%;
 }
