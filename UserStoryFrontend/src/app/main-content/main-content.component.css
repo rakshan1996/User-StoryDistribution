@@ -6,10 +6,14 @@
     width: max-content;
     display:flex;
     justify-content: space-between;
+    padding-right: 20px;
     margin:10px;
     max-width:350px;
     min-width: 250px;
     min-height:82vh;
+    overflow-y: scroll;
+    box-sizing: content-box;
+    
 }
 
 .taskLists{
