@@ -3,7 +3,7 @@
       <mat-list>
         <h3 mat-subheader>Enque</h3>
         <mat-list-item *ngFor="let task of Todos" class="taskLists">
-          <mat-card>
+          <mat-card (click)="onClick(test(task))">
             <mat-card-title>
               {{task.updated | date}}
             </mat-card-title>
@@ -11,7 +11,6 @@
               {{task.description}}
             </mat-card-content>
           </mat-card>
-          
         </mat-list-item>
         
       </mat-list>
@@ -19,6 +18,16 @@
     <div class="card-containers">
       <mat-list>
         <h3 mat-subheader>In Progress</h3>
+        <mat-list-item *ngFor="let task of inProgress" class="taskLists">
+          <mat-card ngClick="test(task)">
+            <mat-card-title>
+              {{task.updated | date}}
+            </mat-card-title>
+            <mat-card-content>
+              {{task.description}}
+            </mat-card-content>
+          </mat-card>
+        </mat-list-item>
       </mat-list>
     </div>
     <div class="card-containers">

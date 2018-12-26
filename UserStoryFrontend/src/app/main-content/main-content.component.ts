@@ -59,10 +59,17 @@ export class MainContentComponent implements OnInit {
     }
   ];
 
+  inProgress: Tasks[] = [
+  ];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  test(task: Tasks): void {
+    debugger;
+    this.inProgress.push(task);
+    console.log(this.inProgress);
+  }
 }
