@@ -69,6 +69,8 @@ export class MainContentComponent implements OnInit {
 
   test(task: Tasks): void {
     debugger;
+    const index = this.Todos.indexOf(task);
+    this.Todos.splice(index, 1);
     this.inProgress.push(task);
     console.log(this.inProgress);
   }
