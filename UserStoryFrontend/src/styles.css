@@ -9,6 +9,7 @@
 .contain{
     width:100%;
     overflow-y: hidden;
+    backface-visibility: visible;
 }
 
 
@@ -17,5 +18,5 @@
 }
 
 .body{
-    background-color: rgba(241, 241, 235, 0.733);
+    background-color: rgba(135, 95, 145, 0.733);
 }

@@ -21,6 +21,14 @@
     max-width: 300px;
     min-height: 10%;
     max-height:20%;
+   
+}
+
+.cards :hover{
+    border-color: rgb(43, 217, 223);
+    transform: translateY(-2px);
+    border: 1px solid transparent;
+    transition: all .3s;
 }
 
 div::-webkit-scrollbar {

@@ -3,7 +3,7 @@
       <mat-list>
         <h3 mat-subheader>Enque</h3>
         <mat-list-item *ngFor="let task of Todos" class="taskLists">
-          <mat-card (click)="onClick(test(task))">
+          <mat-card (click)="test(task)" class="cards">
             <mat-card-title>
               {{task.updated | date}}
             </mat-card-title>
@@ -19,7 +19,7 @@
       <mat-list>
         <h3 mat-subheader>In Progress</h3>
         <mat-list-item *ngFor="let task of inProgress" class="taskLists">
-          <mat-card ngClick="test(task)">
+          <mat-card (onDrop)="test(task)" ondragover="event.preventDefault();">
             <mat-card-title>
               {{task.updated | date}}
             </mat-card-title>
