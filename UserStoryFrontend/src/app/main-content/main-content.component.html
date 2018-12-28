@@ -1,52 +1,75 @@
 <div class="contain" style="width: 100%;">
-  <div class="card-containers" >
- 
-    <mat-list>
-        <h3 mat-subheader>Enque</h3>
-        <mat-list-item *ngFor="let task of Todos" class="taskLists">
-          <mat-card (click)="test(task)" class="cards">
-            <mat-card-title>
-              {{task.updated | date}}
-            </mat-card-title>
-            <mat-card-content>
-              {{task.description}}
-            </mat-card-content>
-          </mat-card>
-        </mat-list-item>
+  <table>
+    <tr>
+      <td class="heading"><h3>Enque</h3></td>
+      <td class="heading"><h3>In Progress</h3></td>
+      <td class="heading">Deployed on Qa</td>
+      <td class="heading">Waiting Qa </td>
+      <td class="heading">Pending Deployment</td>
+    </tr>
+    <tr>
+      <td>
+          <div class="card-containers">
+              <mat-list>
+                 <h3 mat-subheader style="color:azure;">Enque</h3>
+                 <mat-list-item *ngFor="let task of Todos" class="taskLists">
+                   <mat-card (click)="test(task)" class="cards">
+                     <mat-card-title>
+                       {{task.updated | date}}
+                     </mat-card-title>
+                     <mat-card-content>
+                       {{task.description}}
+                     </mat-card-content>
+                   </mat-card>
+                 </mat-list-item>      
+               </mat-list>
+             </div>
+           
+      </td>
+      <td>
+          <div class="card-containers">
+              <mat-list>
+                <h3 mat-subheader style="color:azure;">In Progress</h3>
+                <mat-list-item *ngFor="let task of inProgress" class="taskLists">
+                  <mat-card class="cards">
+                    <mat-card-title>
+                      {{task.updated | date}}
+                    </mat-card-title>
+                    <mat-card-content>
+                      {{task.description}}
+                    </mat-card-content>
+                  </mat-card>
+                </mat-list-item>
+              </mat-list>
+            </div>
+      </td>
+      <td>
+          <div class="card-containers">
+              <mat-list>
+                <h3 mat-subheader style="color:azure;">Deployed on Dev</h3>
+              </mat-list>
+            </div>
+      </td>
+      <td>
+          <div class="card-containers">
+              <mat-list>
+                <h3 mat-subheader style="color:azure;">QA In Progress</h3>
+              </mat-list>
+            </div>
+      </td>
+      <td>
         
-      </mat-list>
-      
-    </div>
-    <mat-divider [vertical]="true" style="float: left;"></mat-divider>
     <div class="card-containers">
-      <mat-list>
-        <h3 mat-subheader>In Progress</h3>
-        <mat-list-item *ngFor="let task of inProgress" class="taskLists">
-          <mat-card class="cards">
-            <mat-card-title>
-              {{task.updated | date}}
-            </mat-card-title>
-            <mat-card-content>
-              {{task.description}}
-            </mat-card-content>
-          </mat-card>
-        </mat-list-item>
-      </mat-list>
-    </div>
-    <div class="card-containers">
-      <mat-list>
-        <h3 mat-subheader>Deployed on Dev</h3>
-      </mat-list>
-    </div>
-    <div class="card-containers">
-      <mat-list>
-        <h3 mat-subheader>QA In Progress</h3>
-      </mat-list>
-    </div>
-    <div class="card-containers">
-      <mat-list>
-        <h3 mat-subheader>Waiting Deployment</h3>
-      </mat-list>
-    </div>
-</div>
+        <mat-list>
+          <h3 mat-subheader style="color:azure;">Waiting Deployment</h3>
+        </mat-list>
+      </div>
+      </td>
+    </tr>
+    
+   
+    
+    
+  </table>
+  </div>
 

@@ -1,19 +1,21 @@
 
 .card-containers{
-    
     float: left;
     padding: 10px;
-    width: max-content;
     display:flex;
-    justify-content: space-between;
-    padding-right: 20px;
-    margin:10px;
     max-width:350px;
     min-width: 250px;
     min-height:82vh;
     overflow-y: scroll;
-    box-sizing: content-box;
-    box-shadow:2px 0px;
+    background-color: #021A1E;
+    margin:15px;
+    margin-right:2px;
+    border-radius: 25px;
+}
+.heading{
+    margin:15px;
+    margin-right:2px;
+    margin-bottom: 0px;
     
 }
 
@@ -22,6 +24,7 @@
     box-shadow:2px 2px grey;
     min-width: 180px;
     max-width: 220px;
+    background-color: #2C7873;
 
 }
 
@@ -36,7 +39,7 @@
 
 .cards :hover{
     border-color: rgb(43, 217, 223);
-    transform: translateY(-2px);
+    transform: translateY(2px);
     border: 1px solid transparent;
     transition: all .3s;
 }

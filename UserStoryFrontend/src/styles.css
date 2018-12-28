@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .container{
-    height: 82vh;
+    height: 90vh;
 }
 .content {
     width:100%;
@@ -8,11 +8,13 @@
 }
 
 .contain{
-    width:100%;
+    width:max-content;
     overflow-y: hidden;
-    backface-visibility: visible;
 }
-
+body{
+    background-color: #6FB98F;
+    overflow: hidden;
+}
 
 .sideNav{
     width:180px;
