@@ -1,6 +1,7 @@
 <div class="contain" style="width: 100%;">
   <div class="card-containers" >
-      <mat-list>
+ 
+    <mat-list>
         <h3 mat-subheader>Enque</h3>
         <mat-list-item *ngFor="let task of Todos" class="taskLists">
           <mat-card (click)="test(task)" class="cards">
@@ -14,12 +15,14 @@
         </mat-list-item>
         
       </mat-list>
+      
     </div>
+    <mat-divider [vertical]="true" style="float: left;"></mat-divider>
     <div class="card-containers">
       <mat-list>
         <h3 mat-subheader>In Progress</h3>
         <mat-list-item *ngFor="let task of inProgress" class="taskLists">
-          <mat-card (onDrop)="test(task)" ondragover="event.preventDefault();">
+          <mat-card class="cards">
             <mat-card-title>
               {{task.updated | date}}
             </mat-card-title>

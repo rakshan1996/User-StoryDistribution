@@ -13,8 +13,18 @@
     min-height:82vh;
     overflow-y: scroll;
     box-sizing: content-box;
+    box-shadow:2px 0px;
     
 }
+
+.cards{
+    padding-top: 4px;
+    box-shadow:2px 2px grey;
+    min-width: 180px;
+    max-width: 220px;
+
+}
+
 
 .taskLists{
     min-width: 200px;

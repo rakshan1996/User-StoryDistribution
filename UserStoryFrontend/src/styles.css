@@ -4,6 +4,7 @@
 }
 .content {
     width:100%;
+    overflow:hidden;
 }
 
 .contain{
