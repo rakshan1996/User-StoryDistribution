@@ -12,13 +12,20 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddStoryComponent } from './add-story/add-story.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     HeaderComponent,
-    MainContentComponent
+    MainContentComponent,
+    AddStoryComponent
+  ],
+  entryComponents: [
+    AddStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,8 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     MatDividerModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
