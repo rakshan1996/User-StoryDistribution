@@ -7,21 +7,31 @@
 .content {
     width:100%;
     overflow:hidden;
+    background-color: #6FB98F;
 }
 
+.container{
+    background-color: #6FB98F;
+}
 .contain{
     width:max-content;
     overflow-y: hidden;
+    background-color: #6FB98F;
 }
 body{
     background-color: #6FB98F;
     overflow: hidden;
 }
 
+.header{
+    background-color: #6FB98F;
+}
 .sideNav{
     width:180px;
+    background-color: #6FB98F;
+    border-radius: 25px;
 }
 
-.body{
-    background-color: rgba(135, 95, 145, 0.733);
+body{
+    background-color: #6FB98F;
 }
