@@ -61,6 +61,12 @@ export class MainContentComponent implements OnInit {
 
   inProgress: Tasks[] = [
   ];
+  deployedOnDev: Tasks[] = [
+  ];
+  qaInProgress: Tasks[] = [
+  ];
+  waitingDeployment: Tasks[] = [
+  ];
 
   constructor() { }
 
@@ -71,6 +77,6 @@ export class MainContentComponent implements OnInit {
     const index = this.Todos.indexOf(task);
     this.Todos.splice(index, 1);
     this.inProgress.push(task);
-    console.log(this.inProgress);
+
   }
 }

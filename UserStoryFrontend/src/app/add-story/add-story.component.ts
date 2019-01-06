@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-story.component.css']
 })
 export class AddStoryComponent implements OnInit {
-
+  Features: string[] = [
+    'enhancement' , 'bug' , 'issue'
+  ];
   constructor() { }
 
   ngOnInit() {

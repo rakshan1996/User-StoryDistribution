@@ -1,3 +1,7 @@
-<p>
-  add-story works!
-</p>
+<div>
+  <h4>Task Type</h4>
+    
+    <select name="taskType"  placeholder="value" style="min-width: 35px; ">
+      <option *ngFor="let task of Features" style="border-radius: 12px;">{{task}}</option>
+    </select>
+</div>
