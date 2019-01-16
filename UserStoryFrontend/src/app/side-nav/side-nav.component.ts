@@ -7,14 +7,12 @@ import { AddStoryComponent } from '../add-story/add-story.component';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
- 
+
   constructor(private dialog: MatDialog ) { }
 
   openDialog() {
     this.dialog.open(AddStoryComponent);
-    this.dialog.open(AddStoryComponent);
-
-  }
+    }
 
   ngOnInit() {
   }

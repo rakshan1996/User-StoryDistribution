@@ -1,7 +1,38 @@
 <div>
-  <h4>Task Type</h4>
-    
-    <select name="taskType"  placeholder="value" style="min-width: 35px; ">
-      <option *ngFor="let task of Features" style="border-radius: 12px;">{{task}}</option>
-    </select>
+<form>
+  <table>      
+    <thead>
+      <tr>
+        <th>
+            <h3 class="formHeading"><i class="material-icons" style="padding-right:10px;" >create</i>Create Story</h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr>
+        <td>
+            <label for="taskType" class="formLabel">Task Type</label>
+            <select name="taskType"  placeholder="value" style="min-width: 35px; ">
+              <option *ngFor="let task of Features" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
+            </select> 
+        </td>
+        <td>
+            <label for="taskType" class="formLabel">Criticality</label>
+            <select name="taskType"  placeholder="value" style="min-width: 35px; ">
+              <option *ngFor="let task of Features" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
+            </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Description
+        </td>
+      </tr>
+      <tr>
+        <td><input type="textarea" placeholder="Description"></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
 </div>
