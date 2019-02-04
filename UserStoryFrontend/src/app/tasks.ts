@@ -1,4 +1,5 @@
 export class Task {
 description: String;
-updated: Date;
+feature: String;
+Type: String;
 }
