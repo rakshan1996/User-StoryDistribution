@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Tasks {
-  description: string;
-  updated: Date;
-}
+import {StoriesService} from '../Services/stories.service';
+import { Task } from '../tasks';
 
 @Component({
   selector: 'app-main-content',
@@ -11,69 +8,27 @@ export interface Tasks {
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-  Todos: Tasks[] = [
-    {
-      description: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      description: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      description: 'Work',
-      updated: new Date('1/28/16'),
-    }, {
-      description: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      description: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      description: 'Work',
-      updated: new Date('1/28/16'),
-    }, {
-      description: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      description: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      description: 'Work',
-      updated: new Date('1/28/16'),
-    }, {
-      description: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      description: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      description: 'Work',
-      updated: new Date('1/28/16'),
-    }
+  Todos: Task[];
+   inProgress: Task[] = [
   ];
-
-  inProgress: Tasks[] = [
-  ];
+  /*
   deployedOnDev: Tasks[] = [
   ];
   qaInProgress: Tasks[] = [
   ];
   waitingDeployment: Tasks[] = [
-  ];
+  ]; */
 
-  constructor() { }
+  constructor(private storyService: StoriesService) { }
 
   ngOnInit() {
+    this.getTask();
+  }
+  getTask() {
+    this.Todos = this.storyService.getTask();
   }
 
-  test(task: Tasks): void {
+  test(task: Task): void {
     const index = this.Todos.indexOf(task);
     this.Todos.splice(index, 1);
     this.inProgress.push(task);
