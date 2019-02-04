@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StoriesService} from '../Services/stories.service';
 import { Task } from '../tasks';
+import { demoTasks } from '../mockTasks';
 
 @Component({
   selector: 'app-main-content',
@@ -8,22 +9,29 @@ import { Task } from '../tasks';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
+  demo: Task[];
+  index = 0;
   Todos: Task[];
    inProgress: Task[] = [
-  ];
-  /*
-  deployedOnDev: Tasks[] = [
-  ];
-  qaInProgress: Tasks[] = [
-  ];
-  waitingDeployment: Tasks[] = [
-  ]; */
+   ];
+  deployedOnDev: Task[] = [
+   ];
+  qaInProgress: Task[] = [
+   ];
+  waitingDeployment: Task[] = [
+   ];
 
   constructor(private storyService: StoriesService) { }
 
   ngOnInit() {
     this.getTask();
   }
+  divide( item): void {
+    if (item.Type === 'Enque') {
+     this.Todos.push(item);
+     }
+ }
+
   getTask() {
     this.Todos = this.storyService.getTask();
   }
