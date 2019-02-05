@@ -10,31 +10,56 @@ import { demoTasks } from '../mockTasks';
 })
 export class MainContentComponent implements OnInit {
   demo: Task[];
-  index = 0;
   Todos: Task[];
-   inProgress: Task[] = [
-   ];
-  deployedOnDev: Task[] = [
-   ];
-  qaInProgress: Task[] = [
-   ];
-  waitingDeployment: Task[] = [
-   ];
+   inProgress: Task[];
+  deployedOnDev: Task[];
+  qaInProgress: Task[];
+  waitingDeployment: Task[];
 
   constructor(private storyService: StoriesService) { }
 
   ngOnInit() {
     this.getTask();
   }
-  divide( item): void {
-    if (item.Type === 'Enque') {
-     this.Todos.push(item);
-     }
- }
 
-  getTask() {
-    this.Todos = this.storyService.getTask();
+  
+  divide(): void {
+    this.demo.forEach(function (task) {
+      console.log(task.Type);
+      console.log(this.qaInProgress);
+       if (task.Type === 'WaitingDeployment') {
+        this.waitingDeployment.push(task);
+        console.log(this.waitingDeployment);
+      } else if (task.Type === 'QaInProgress') {
+        console.log(this.qaInProgress);
+        this.qaInProgress.push(task);
+      }
+    });
   }
+  
+  
+  getTask() {
+    this.demo = this.storyService.getTask();
+    this.divide();
+    
+    /* this.inProgress = this.storyService.getTask();
+    this.deployedOnDev = this.storyService.getTask();
+    this.qaInProgress = this.storyService.getTask(); */
+    console.log(this.demo);
+     /* this.demo.forEach(function (task) {
+      console.log(task.Type);
+      console.log($scope.qaInProgress);
+       if (task.Type === 'WaitingDeployment') {
+        this.waitingDeployment.push(task);
+        console.log(this.waitingDeployment);
+      } else if (task.Type === 'QaInProgress') {
+        console.log(this.qaInProgress);
+        this.qaInProgress.push(task);
+      }
+    }); */
+  }
+
+  
 
   test(task: Task): void {
     const index = this.Todos.indexOf(task);
