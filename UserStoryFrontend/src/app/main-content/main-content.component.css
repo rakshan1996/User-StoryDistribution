@@ -47,3 +47,16 @@ div::-webkit-scrollbar {
     width: 2em;
     height: 2em
 }
+
+
+@media only  screen and   (max-width: 1366px)
+{
+    .card-containers{
+        min-width: 200px;
+    } 
+    
+    .cards{
+        min-width:130px;
+        max-width:150px;
+    }
+}

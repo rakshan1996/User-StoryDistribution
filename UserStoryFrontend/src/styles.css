@@ -35,3 +35,9 @@ body{
 body{
     background-color: #6FB98F;
 }
+
+@media screen and (max-width:1400px){
+    .sidenav{
+        width:10%;
+    }
+}
