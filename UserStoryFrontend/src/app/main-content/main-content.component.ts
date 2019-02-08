@@ -22,12 +22,15 @@ export class MainContentComponent implements OnInit {
     this.getTask();
   }
   divide(): void {
+
     console.log(this.demo);
     this.demo.forEach((task) => {
+
        if (task.Type === 'WaitingDeployment') {
         this.waitingDeployment.push(task);
         console.log(this.waitingDeployment);
       } else if (task.Type === 'QaInProgress') {
+
         this.qaInProgress.push(task);
       } else if (task.Type === 'Enque') {
         this.Todos.push(task);
