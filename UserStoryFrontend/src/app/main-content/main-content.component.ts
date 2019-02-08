@@ -9,57 +9,40 @@ import { demoTasks } from '../mockTasks';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-  demo: Task[];
-  Todos: Task[];
-   inProgress: Task[];
-  deployedOnDev: Task[];
-  qaInProgress: Task[];
-  waitingDeployment: Task[];
+  demo: Task[] = [];
+  Todos: Task[] = [];
+   inProgress: Task[] = [];
+  deployedOnDev: Task[] = [];
+  qaInProgress: Task[] = [];
+  waitingDeployment: Task[] = [];
 
   constructor(private storyService: StoriesService) { }
 
   ngOnInit() {
     this.getTask();
   }
-
-  
   divide(): void {
-    this.demo.forEach(function (task) {
-      console.log(task.Type);
-      console.log(this.qaInProgress);
+    console.log(this.demo);
+    this.demo.forEach((task) => {
        if (task.Type === 'WaitingDeployment') {
         this.waitingDeployment.push(task);
         console.log(this.waitingDeployment);
       } else if (task.Type === 'QaInProgress') {
-        console.log(this.qaInProgress);
         this.qaInProgress.push(task);
+      } else if (task.Type === 'Enque') {
+        this.Todos.push(task);
+      } else if(task.Type === 'DeployedOnDev'){
+        this.deployedOnDev.push(task);
+      } else {
+        this.inProgress.push(task);
       }
+
     });
   }
-  
-  
   getTask() {
     this.demo = this.storyService.getTask();
     this.divide();
-    
-    /* this.inProgress = this.storyService.getTask();
-    this.deployedOnDev = this.storyService.getTask();
-    this.qaInProgress = this.storyService.getTask(); */
-    console.log(this.demo);
-     /* this.demo.forEach(function (task) {
-      console.log(task.Type);
-      console.log($scope.qaInProgress);
-       if (task.Type === 'WaitingDeployment') {
-        this.waitingDeployment.push(task);
-        console.log(this.waitingDeployment);
-      } else if (task.Type === 'QaInProgress') {
-        console.log(this.qaInProgress);
-        this.qaInProgress.push(task);
-      }
-    }); */
   }
-
-  
 
   test(task: Task): void {
     const index = this.Todos.indexOf(task);
