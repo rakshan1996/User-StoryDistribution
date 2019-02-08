@@ -26,12 +26,12 @@ export class MainContentComponent implements OnInit {
   divide(): void {
     this.demo.forEach(function (task) {
       console.log(task.Type);
-      console.log(this.qaInProgress);
+      
        if (task.Type === 'WaitingDeployment') {
         this.waitingDeployment.push(task);
         console.log(this.waitingDeployment);
       } else if (task.Type === 'QaInProgress') {
-        console.log(this.qaInProgress);
+        //console.log(this.qaInProgress);
         this.qaInProgress.push(task);
       }
     });
