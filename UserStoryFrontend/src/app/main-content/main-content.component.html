@@ -2,23 +2,23 @@
   <div class="card-containers">
     <mat-list>
       <h3 mat-subheader style="color:azure;">Enque</h3>
-      <mat-list-item *ngFor="let task of Todos" class="taskLists">
-        <mat-card (click)="test(task)" class="cards">
+       <mat-list-item *ngFor="let task of Todos" class="taskLists" cdkDropList  (cdkDropListDropped)="test123($event)">
+        <mat-card  class="cards" cdkDrag>
           <mat-card-title>
-            {{task.feature}}
+            <span> {{task.feature}}</span>
           </mat-card-title>
           <mat-card-content>
             {{task.description}}
           </mat-card-content>
         </mat-card>
       </mat-list-item>      
-    </mat-list>
-  </div>           
+    </mat-list>           
+  </div>
   <div class="card-containers">
     <mat-list>
-      <h3 mat-subheader style="color:azure;">In Progress</h3>
-      <mat-list-item *ngFor="let task of inProgress" class="taskLists">
-        <mat-card class="cards">
+      <h3 mat-subheader style="color:azure;" >In Progress</h3>
+      <mat-list-item *ngFor="let task of inProgress" class="taskLists" cdkDropList  >
+        <mat-card class="cards"  >
           <mat-card-title>
             {{task.feature}}
           </mat-card-title>

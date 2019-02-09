@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddStoryComponent } from './add-story/add-story.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
@@ -42,7 +43,8 @@ import { AddStoryComponent } from './add-story/add-story.component';
     MatDividerModule,
     MatGridListModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

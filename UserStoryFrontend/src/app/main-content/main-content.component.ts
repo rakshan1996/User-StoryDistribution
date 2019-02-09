@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StoriesService} from '../Services/stories.service';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { Task } from '../tasks';
 import { demoTasks } from '../mockTasks';
 
@@ -32,9 +33,9 @@ export class MainContentComponent implements OnInit {
       } else if (task.Type === 'QaInProgress') {
 
         this.qaInProgress.push(task);
-      } else if (task.Type === 'Enque') {
+      } else if (task.Type === 'EnQue') {
         this.Todos.push(task);
-      } else if(task.Type === 'DeployedOnDev'){
+      } else if (task.Type === 'DeployedOnDev') {
         this.deployedOnDev.push(task);
       } else {
         this.inProgress.push(task);
@@ -45,6 +46,13 @@ export class MainContentComponent implements OnInit {
   getTask() {
     this.demo = this.storyService.getTask();
     this.divide();
+  }
+
+ test123(event): boolean {
+   debugger;
+   console.log('it WOrks');
+    console.log(event);
+    return true;
   }
 
   test(task: Task): void {
