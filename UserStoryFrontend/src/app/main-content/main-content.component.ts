@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StoriesService} from '../Services/stories.service';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import {DragDropModule, CdkDrag, CdkDragDrop} from '@angular/cdk/drag-drop';
 import { Task } from '../tasks';
 import { demoTasks } from '../mockTasks';
 
@@ -48,11 +48,19 @@ export class MainContentComponent implements OnInit {
     this.divide();
   }
 
- test123(event): boolean {
-   debugger;
-   console.log('it WOrks');
-    console.log(event);
-    return true;
+ test123(event: CdkDragDrop<Task>, task: Task): void {
+   console.log(event);
+   if (task.Type === 'EnQue') {
+    const index = this.Todos.indexOf(task);
+    this.Todos.splice(index, 1);
+    task.Type = 'InProgress';
+    this.inProgress.push(task);
+   } else {
+    const index = this.inProgress.indexOf(task);
+    this.inProgress.splice(index, 1);
+    task.Type = 'EnQue';
+    this.Todos.push(task);
+   }
   }
 
   test(task: Task): void {
