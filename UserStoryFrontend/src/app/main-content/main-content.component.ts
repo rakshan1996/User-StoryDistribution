@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {StoriesService} from '../Services/stories.service';
-import {DragDropModule, CdkDrag, CdkDragDrop} from '@angular/cdk/drag-drop';
+import {DragDropModule, CdkDrag, CdkDragDrop,moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { Task } from '../tasks';
-import { demoTasks } from '../mockTasks';
+
 
 @Component({
   selector: 'app-main-content',
@@ -37,7 +37,7 @@ export class MainContentComponent implements OnInit {
         this.Todos.push(task);
       } else if (task.Type === 'DeployedOnDev') {
         this.deployedOnDev.push(task);
-      } else {
+      } else if (task.Type === 'InProgress') {
         this.inProgress.push(task);
       }
 
@@ -49,18 +49,22 @@ export class MainContentComponent implements OnInit {
   }
 
  test123(event: CdkDragDrop<Task>, task: Task): void {
-   console.log(event);
-   if (task.Type === 'EnQue') {
-    const index = this.Todos.indexOf(task);
-    this.Todos.splice(index, 1);
-    task.Type = 'InProgress';
-    this.inProgress.push(task);
-   } else {
-    const index = this.inProgress.indexOf(task);
-    this.inProgress.splice(index, 1);
-    task.Type = 'EnQue';
-    this.Todos.push(task);
+   console.log(event.container.exit);
+   debugger;
+   if (event.container.exit) {
+    if (task.Type === 'EnQue') {
+      const index = this.Todos.indexOf(task);
+      this.Todos.splice(index, 1);
+      task.Type = 'InProgress';
+      this.inProgress.push(task);
+     } else {
+      const index = this.inProgress.indexOf(task);
+      this.inProgress.splice(index, 1);
+      task.Type = 'EnQue';
+      this.Todos.push(task);
+     }
    }
+   
   }
 
   test(task: Task): void {
