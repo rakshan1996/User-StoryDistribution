@@ -2,8 +2,8 @@
   <div class="card-containers">
     <mat-list>
       <h3 mat-subheader style="color:azure;">Enque</h3>
-       <mat-list-item *ngFor="let task of Todos" class="taskLists" cdkDropList #Todos="cdkDropList" (onclick)="test(task)" [cdkDropListData]="task" (cdkDropListDropped)="test123($event,task)"  >
-        <mat-card  class="cards" cdkDrag>
+       <mat-list-item *ngFor="let task of Todos" class="taskLists" cdkDropList  id="Todos" (onclick)="test(task)" [cdkDropListData]="task" [cdkDropListConnectedTo]="[inProgress]" >
+        <mat-card  class="cards" >
           <mat-card-title>
             <span> {{task.feature}}</span>
           </mat-card-title>
@@ -17,8 +17,8 @@
   <div class="card-containers">
     <mat-list>
       <h3 mat-subheader style="color:azure;" >In Progress</h3>
-      <mat-list-item *ngFor="let task of inProgress" class="taskLists" cdkDropList #inProgress="cdkDropList"   [cdkDropListData]="task" (cdkDropListDropped)="test123($event,task)" >
-        <mat-card class="cards"  cdkDrag>
+      <mat-list-item *ngFor="let task of inProgress" class="taskLists" cdkDropList id="inProgress"   [cdkDropListData]="task" [cdkDropListConnectedTo]="[Todos]">
+        <mat-card class="cards"  >
           <mat-card-title>
             {{task.feature}}
           </mat-card-title>

@@ -48,7 +48,7 @@ export class MainContentComponent implements OnInit {
     this.divide();
   }
 
- test123(event: CdkDragDrop<Task>, task: Task): void {
+ /* test123(event: CdkDragDrop<Task>, task: Task): void {
    console.log(event.container.exit);
    debugger;
    if (event.container.exit) {
@@ -66,7 +66,7 @@ export class MainContentComponent implements OnInit {
    }
    
   }
-
+ */
   test(task: Task): void {
     const index = this.Todos.indexOf(task);
     this.Todos.splice(index, 1);
