@@ -23,7 +23,7 @@ export class MainContentComponent implements OnInit {
     this.getTask();
   }
   divide(): void {
-
+    debugger;
     console.log(this.demo);
     this.demo.forEach((task) => {
 
@@ -44,8 +44,7 @@ export class MainContentComponent implements OnInit {
     });
   }
   getTask() {
-    this.demo = this.storyService.getTask();
-    this.divide();
+    console.log(this.storyService.getTask());
   }
 
  /* test123(event: CdkDragDrop<Task>, task: Task): void {
@@ -68,6 +67,7 @@ export class MainContentComponent implements OnInit {
   }
  */
   test(task: Task): void {
+    debugger;
     const index = this.Todos.indexOf(task);
     this.Todos.splice(index, 1);
     this.inProgress.push(task);

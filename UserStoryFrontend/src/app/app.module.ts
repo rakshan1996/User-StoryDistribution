@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddStoryComponent } from './add-story/add-story.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatGridListModule,
     MatCardModule,
     MatDialogModule,
-    DragDropModule
+    DragDropModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
