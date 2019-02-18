@@ -27,24 +27,28 @@ export class MainContentComponent implements OnInit {
     console.log(this.demo);
     this.demo.forEach((task) => {
 
-       if (task.Type === 'WaitingDeployment') {
+       if (task.status === 'WaitingDeployment') {
         this.waitingDeployment.push(task);
         console.log(this.waitingDeployment);
-      } else if (task.Type === 'QaInProgress') {
+      } else if (task.status === 'QaInProgress') {
 
         this.qaInProgress.push(task);
-      } else if (task.Type === 'EnQue') {
+      } else if (task.status === 'enque') {
         this.Todos.push(task);
-      } else if (task.Type === 'DeployedOnDev') {
+      } else if (task.status === 'DeployedOnDev') {
         this.deployedOnDev.push(task);
-      } else if (task.Type === 'InProgress') {
+      } else if (task.status === 'inProgress') {
         this.inProgress.push(task);
       }
 
     });
   }
   getTask() {
-    console.log(this.storyService.getTask());
+    this.storyService.getTask()
+    .subscribe( response => {
+      this.demo = response.stories;
+      this.divide();
+    });
   }
 
  /* test123(event: CdkDragDrop<Task>, task: Task): void {
