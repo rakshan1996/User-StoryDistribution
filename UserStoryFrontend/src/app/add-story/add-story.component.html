@@ -9,7 +9,14 @@
       </tr>
     </thead>
     <tbody>
-     
+     <tr>
+        <td>
+          <label for="status" class="formLabel">Status</label>
+          <select name="status" placeholder="value" style="min-width: 35px;">
+          <option *ngFor="let task of Status" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
+          </select>
+        </td>
+     </tr>
       <tr>
         <td>
             <label for="taskType" class="formLabel">Task Type</label>
@@ -20,7 +27,7 @@
         <td>
             <label for="taskType" class="formLabel">Criticality</label>
             <select name="taskType"  placeholder="value" style="min-width: 35px; ">
-              <option *ngFor="let task of Features" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
+              <option *ngFor="let task of Urgency" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
             </select>
         </td>
       </tr>

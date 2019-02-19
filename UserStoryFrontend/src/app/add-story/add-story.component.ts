@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddStoryComponent implements OnInit {
   Features: string[] = [
-    'enhancement' , 'bug' , 'issue'
+    'enhancement' , 'bug' , 'feature'
+  ];
+  Status: string[] = [
+    'enque', 'inprogress', 'deployedOnDev', 'qaInProgress', 'waitingDeployment'
+  ];
+  Urgency: string[] =[
+    'Low', 'Medium', 'High', 'Critical'
   ];
   constructor() { }
 
