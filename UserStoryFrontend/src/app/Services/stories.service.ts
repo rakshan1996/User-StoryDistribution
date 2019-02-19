@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Task} from '../tasks';
-import {demoTasks} from '../mockTasks';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({
