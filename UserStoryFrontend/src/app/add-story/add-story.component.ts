@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { StoriesService } from '../Services/stories.service';
 @Component({
   selector: 'app-add-story',
   templateUrl: './add-story.component.html',
@@ -15,6 +16,9 @@ export class AddStoryComponent implements OnInit {
   Urgency: string[] = [
     'Low', 'Medium', 'High', 'Critical'
   ];
+
+  constructor(private storyService: StoriesService) {}
+
   storyForm = new FormGroup({
     description: new FormControl(''),
     criticality: new FormControl(''),
@@ -26,7 +30,11 @@ export class AddStoryComponent implements OnInit {
   }
 
   createStory() {
-    console.log(this.storyForm.value);
+    console.log(JSON.stringify(this.storyForm.value));
+    this.storyService.createStory(this.storyForm.value)
+    .subscribe(response => {
+      console.log(response);
+    });
   }
 
 }
