@@ -16,7 +16,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddStoryComponent } from './add-story/add-story.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatDialogModule,
     DragDropModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
