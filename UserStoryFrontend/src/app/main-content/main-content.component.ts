@@ -23,7 +23,6 @@ export class MainContentComponent implements OnInit {
     this.getTask();
   }
   divide(): void {
-    debugger;
     console.log(this.demo);
     this.demo.forEach((task) => {
 
