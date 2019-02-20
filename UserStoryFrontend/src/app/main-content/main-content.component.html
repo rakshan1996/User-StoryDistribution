@@ -20,7 +20,7 @@
       <mat-list-item *ngFor="let task of inProgress" class="taskLists" >
         <mat-card class="cards"  >
           <mat-card-title>
-            {{task.feature}}
+            {{task.Type}}
           </mat-card-title>
           <mat-card-content>
             {{task.description}}
@@ -35,7 +35,7 @@
       <mat-list-item *ngFor="let task of deployedOnDev" class="taskLists">
         <mat-card class="cards">
           <mat-card-title>
-            {{task.feature}}
+            {{task.Type}}
           </mat-card-title>
           <mat-card-content>
             {{task.description}}
@@ -50,7 +50,7 @@
       <mat-list-item *ngFor="let task of qaInProgress" class="taskLists">
         <mat-card class="cards">
           <mat-card-title>
-            {{task.feature}}
+            {{task.Type}}
           </mat-card-title>
           <mat-card-content>
             {{task.description}}
@@ -65,7 +65,7 @@
       <mat-list-item *ngFor="let task of waitingDeployment" class="taskLists">
         <mat-card class="cards">
           <mat-card-title>
-            {{task.feature}}
+            {{task.Type}}
           </mat-card-title>
           <mat-card-content>
             {{task.description}}
