@@ -30,7 +30,6 @@ export class AddStoryComponent implements OnInit {
   }
 
   createStory() {
-    console.log(JSON.stringify(this.storyForm.value));
     this.storyService.createStory(this.storyForm.value)
     .subscribe(response => {
       console.log(response);

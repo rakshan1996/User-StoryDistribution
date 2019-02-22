@@ -14,6 +14,6 @@ export class StoriesService {
     return this.http.get(this.url + 'story');
   }
   createStory(story: Task): Observable<any> {
-    return this.http.post(this.url + 'newStory', JSON.stringify(story) );
+    return this.http.post(this.url + 'newStory', story );
   }
 }
