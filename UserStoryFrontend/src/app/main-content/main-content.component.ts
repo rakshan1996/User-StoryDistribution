@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {StoriesService} from '../Services/stories.service';
-import {DragDropModule, CdkDrag, CdkDragDrop,moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { Task } from '../tasks';
+import { MatDialog } from '@angular/material';
+
 
 
 @Component({
@@ -17,7 +18,7 @@ export class MainContentComponent implements OnInit {
   qaInProgress: Task[] = [];
   waitingDeployment: Task[] = [];
 
-  constructor(private storyService: StoriesService) { }
+  constructor(private storyService: StoriesService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getTask();
@@ -48,6 +49,9 @@ export class MainContentComponent implements OnInit {
       this.demo = response.stories;
       this.divide();
     });
+  }
+
+  openDetail(task: Task) {
   }
 
  /* test123(event: CdkDragDrop<Task>, task: Task): void {

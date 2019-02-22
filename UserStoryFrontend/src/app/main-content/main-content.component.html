@@ -3,7 +3,7 @@
     <mat-list>
       <h3 mat-subheader style="color:azure;">Enque</h3>
        <mat-list-item *ngFor="let task of Todos" class="taskLists"  (click)="test(task)" >
-        <mat-card  class="cards" >
+        <mat-card  class="cards" (mouseover)="openDetail(task)">
           <mat-card-title>
             <span> {{task.Type}}</span>
           </mat-card-title>
