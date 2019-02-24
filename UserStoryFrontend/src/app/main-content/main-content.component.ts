@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {StoriesService} from '../Services/stories.service';
 import { Task } from '../tasks';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { UpdateStoryComponent } from '../update-story/update-story.component';
 
 
 
@@ -52,6 +53,7 @@ export class MainContentComponent implements OnInit {
   }
 
   openDetail(task: Task) {
+    this.dialog.open(UpdateStoryComponent, { data: task});
   }
 
  /* test123(event: CdkDragDrop<Task>, task: Task): void {
@@ -70,11 +72,10 @@ export class MainContentComponent implements OnInit {
       this.Todos.push(task);
      }
    }
-   
   }
  */
+
   test(task: Task): void {
-    debugger;
     const index = this.Todos.indexOf(task);
     this.Todos.splice(index, 1);
     this.inProgress.push(task);

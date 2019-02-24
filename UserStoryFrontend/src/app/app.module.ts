@@ -17,6 +17,7 @@ import { AddStoryComponent } from './add-story/add-story.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateStoryComponent } from './update-story/update-story.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     SideNavComponent,
     HeaderComponent,
     MainContentComponent,
-    AddStoryComponent
+    AddStoryComponent,
+    UpdateStoryComponent
   ],
   entryComponents: [
-    AddStoryComponent
+    AddStoryComponent,
+    UpdateStoryComponent
   ],
   imports: [
     BrowserModule,

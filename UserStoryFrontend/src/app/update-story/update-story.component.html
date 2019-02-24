@@ -1,0 +1,53 @@
+<div class="form">
+  <form [formGroup]="storyForm">
+    <table>      
+      <thead>
+        <tr>
+          <th>
+              <h3 class="formHeading"><i class="material-icons" style="padding-right:10px;" >create</i>Create Story</h3>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr>
+          <td>
+            <label for="status" class="formLabel">Status</label>
+            <select name="status" placeholder="value"  formControlName="status" style="min-width: 35px;">
+            <option *ngFor="let task of Status" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
+            </select>
+          </td>
+       </tr>
+        <tr>
+          <td>
+              <label for="taskType" class="formLabel">Task Type</label>
+              <select name="taskType"  placeholder="value" formControlName="feature" style="min-width: 35px; ">
+                <option *ngFor="let task of Features" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
+              </select> 
+          </td>
+          <td>
+              <label for="taskType" class="formLabel">Criticality</label>
+              <select name="taskType"  formControlName="urgency" placeholder="value" formControlName="criticality" style="min-width: 35px; ">
+                <option *ngFor="let task of Urgency" value="{{task}}" style="border-radius: 12px;">{{task}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Description
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <textarea rows="6" cols="50" formControlName="description" > </textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit" (click)="createStory()" style="float:right;border-radius: 5px;">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  </div>
+  
