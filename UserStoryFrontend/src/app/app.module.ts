@@ -18,6 +18,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateStoryComponent } from './update-story/update-story.component';
+import { ShowStoryComponent } from './show-story/show-story.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,13 @@ import { UpdateStoryComponent } from './update-story/update-story.component';
     HeaderComponent,
     MainContentComponent,
     AddStoryComponent,
-    UpdateStoryComponent
+    UpdateStoryComponent,
+    ShowStoryComponent
   ],
   entryComponents: [
     AddStoryComponent,
-    UpdateStoryComponent
+    UpdateStoryComponent,
+    ShowStoryComponent
   ],
   imports: [
     BrowserModule,

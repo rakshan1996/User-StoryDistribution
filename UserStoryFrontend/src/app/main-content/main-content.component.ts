@@ -3,6 +3,7 @@ import {StoriesService} from '../Services/stories.service';
 import { Task } from '../tasks';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UpdateStoryComponent } from '../update-story/update-story.component';
+import {ShowStoryComponent } from '../show-story/show-story.component';
 
 
 
@@ -53,7 +54,7 @@ export class MainContentComponent implements OnInit {
   }
 
   openDetail(task: Task) {
-    this.dialog.open(UpdateStoryComponent, { data: task});
+    this.dialog.open(ShowStoryComponent, { data: task});
   }
 
  /* test123(event: CdkDragDrop<Task>, task: Task): void {
